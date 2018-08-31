@@ -1,0 +1,108 @@
+﻿@model IEnumerable<FunFirstAPI_Pro.Models.User_tbl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ur_firstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ur_lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ur_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ur_mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ur_entity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ur_password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ur_role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ur_desg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ur_createdby)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ur_createdat)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.ur_updateby)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ur_updatedat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ur_isdeleted)
+        </th>*@
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ur_firstname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ur_lastname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ur_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ur_mobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ur_entity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ur_password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ur_role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ur_desg)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ur_createdby)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ur_createdat)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.ur_updateby)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ur_updatedat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ur_isdeleted)
+        </td>*@
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+        </td>
+    </tr>
+}
+
+</table>

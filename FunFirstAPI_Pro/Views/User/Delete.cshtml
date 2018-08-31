@@ -1,0 +1,129 @@
+﻿@model FunFirstAPI_Pro.Models.User_tbl
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>User_tbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ur_firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ur_firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ur_lastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ur_lastname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ur_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ur_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ur_mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ur_mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ur_entity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ur_entity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ur_password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ur_password)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.ur_createdby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ur_createdby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ur_createdat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ur_createdat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ur_updateby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ur_updateby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ur_updatedat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ur_updatedat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ur_isdeleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ur_isdeleted)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ur_role)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ur_role)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ur_desg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ur_desg)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

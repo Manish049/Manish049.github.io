@@ -1,0 +1,67 @@
+﻿@model FunFirstAPI_Pro.Models.Product_tbl
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product_tbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_createdby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_createdby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_createdat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_createdat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_updatedby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_updatedby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_updatedat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_updatedat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_isdeleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_isdeleted)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.pr_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

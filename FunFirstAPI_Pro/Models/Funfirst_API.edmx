@@ -1,0 +1,839 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FFGSPL_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="API_Hit">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="API" Type="nvarchar" MaxLength="500" />
+          <Property Name="Hit" Type="int" />
+          <Property Name="Datetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Brand_tbl">
+          <Key>
+            <PropertyRef Name="br_id" />
+          </Key>
+          <Property Name="br_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="br_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="br_creaetedby" Type="nvarchar" MaxLength="50" />
+          <Property Name="br_createdat" Type="datetime" />
+          <Property Name="br_updatedby" Type="nvarchar" MaxLength="50" />
+          <Property Name="br_updatedat" Type="datetime" />
+          <Property Name="br_isdeleted" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Franchise_tbl">
+          <Key>
+            <PropertyRef Name="fr_id" />
+          </Key>
+          <Property Name="fr_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fr_Placement_Officer_id" Type="int" />
+          <Property Name="fr_visit_date" Type="date" />
+          <Property Name="fr_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="fr_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="fr_br_id" Type="int" />
+          <Property Name="fr_pr_id" Type="int" Nullable="false" />
+          <Property Name="fr_owner_mgr" Type="nvarchar" MaxLength="520" />
+          <Property Name="fr_mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="fr_landline" Type="nvarchar" MaxLength="50" />
+          <Property Name="fr_emial" Type="nvarchar" MaxLength="200" />
+          <Property Name="fr_address" Type="nvarchar(max)" />
+          <Property Name="fr_pincode" Type="int" />
+          <Property Name="fr_area" Type="nvarchar" MaxLength="200" />
+          <Property Name="fr_city" Type="nvarchar" MaxLength="200" />
+          <Property Name="fr_district" Type="nvarchar" MaxLength="50" />
+          <Property Name="fr_state" Type="nvarchar" MaxLength="50" />
+          <Property Name="fr_location_lat" Type="nvarchar" MaxLength="200" />
+          <Property Name="fr_Location_lng" Type="nvarchar" MaxLength="200" />
+          <Property Name="fr_req_jan" Type="int" />
+          <Property Name="fr_req_feb" Type="int" />
+          <Property Name="fr_req_mar" Type="int" />
+          <Property Name="fr_req_apr" Type="int" />
+          <Property Name="fr_req_may" Type="int" />
+          <Property Name="fr_req_jun" Type="int" />
+          <Property Name="fr_req_jul" Type="int" />
+          <Property Name="fr_req_aug" Type="int" />
+          <Property Name="fr_req_sept" Type="int" />
+          <Property Name="fr_req_oct" Type="int" />
+          <Property Name="fr_req_nov" Type="int" />
+          <Property Name="fr_req_dec" Type="int" />
+          <Property Name="fr_sal_range_fresher" Type="money" />
+          <Property Name="fr_contact_person" Type="nvarchar" MaxLength="200" />
+          <Property Name="fr_contact" Type="nvarchar" MaxLength="50" />
+          <Property Name="fr_ceatedby" Type="nvarchar" MaxLength="50" />
+          <Property Name="fr_createdat" Type="datetime" />
+          <Property Name="fr_updateby" Type="nvarchar" MaxLength="50" />
+          <Property Name="fr_updatedat" Type="datetime" />
+          <Property Name="fr_isdeleted" Type="nvarchar" MaxLength="50" />
+          <Property Name="fr_Officer_email" Type="nvarchar" MaxLength="200" />
+          <Property Name="fr_no_tech_work" Type="int" />
+        </EntityType>
+        <EntityType Name="Product_tbl">
+          <Key>
+            <PropertyRef Name="pr_id" />
+          </Key>
+          <Property Name="pr_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pr_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="pr_createdby" Type="nvarchar" MaxLength="50" />
+          <Property Name="pr_createdat" Type="datetime" />
+          <Property Name="pr_updatedby" Type="nvarchar" MaxLength="50" />
+          <Property Name="pr_updatedat" Type="datetime" />
+          <Property Name="pr_isdeleted" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Requirement_data">
+          <Key>
+            <PropertyRef Name="req_id" />
+          </Key>
+          <Property Name="req_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="req_datetime" Type="datetime" />
+          <Property Name="req_jan" Type="int" />
+          <Property Name="req_feb" Type="int" />
+          <Property Name="req_mar" Type="int" />
+          <Property Name="req_apr" Type="int" />
+          <Property Name="req_may" Type="int" />
+          <Property Name="req_jun" Type="int" />
+          <Property Name="req_jul" Type="int" />
+          <Property Name="req_aug" Type="int" />
+          <Property Name="req_sep" Type="int" />
+          <Property Name="req_oct" Type="int" />
+          <Property Name="req_nov" Type="int" />
+          <Property Name="req_dec" Type="int" />
+          <Property Name="req_user" Type="int" />
+          <Property Name="req_franchise" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="User_tbl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ur_firstname" Type="varchar" MaxLength="200" />
+          <Property Name="ur_lastname" Type="varchar" MaxLength="200" />
+          <Property Name="ur_email" Type="varchar" MaxLength="200" />
+          <Property Name="ur_mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="ur_entity" Type="varchar" MaxLength="50" />
+          <Property Name="ur_password" Type="varchar" MaxLength="50" />
+          <Property Name="ur_createdby" Type="varchar" MaxLength="200" />
+          <Property Name="ur_createdat" Type="datetime" />
+          <Property Name="ur_updateby" Type="varchar" MaxLength="200" />
+          <Property Name="ur_updatedat" Type="datetime" />
+          <Property Name="ur_isdeleted" Type="varchar" MaxLength="50" />
+          <Property Name="ur_role" Type="nvarchar" MaxLength="50" />
+          <Property Name="ur_desg" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Franchise_tbl_Brand_tbl">
+          <End Role="Brand_tbl" Type="Self.Brand_tbl" Multiplicity="0..1" />
+          <End Role="Franchise_tbl" Type="Self.Franchise_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand_tbl">
+              <PropertyRef Name="br_id" />
+            </Principal>
+            <Dependent Role="Franchise_tbl">
+              <PropertyRef Name="fr_br_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Franchise_tbl_Product_tbl1">
+          <End Role="Product_tbl" Type="Self.Product_tbl" Multiplicity="1" />
+          <End Role="Franchise_tbl" Type="Self.Franchise_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product_tbl">
+              <PropertyRef Name="pr_id" />
+            </Principal>
+            <Dependent Role="Franchise_tbl">
+              <PropertyRef Name="fr_pr_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Franchise_tbl_User_tbl">
+          <End Role="User_tbl" Type="Self.User_tbl" Multiplicity="0..1" />
+          <End Role="Franchise_tbl" Type="Self.Franchise_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_tbl">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Franchise_tbl">
+              <PropertyRef Name="fr_Placement_Officer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Requirement_data_Franchise_tbl">
+          <End Role="Franchise_tbl" Type="Self.Franchise_tbl" Multiplicity="0..1" />
+          <End Role="Requirement_data" Type="Self.Requirement_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Franchise_tbl">
+              <PropertyRef Name="fr_id" />
+            </Principal>
+            <Dependent Role="Requirement_data">
+              <PropertyRef Name="req_franchise" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Requirement_data_User_tbl">
+          <End Role="User_tbl" Type="Self.User_tbl" Multiplicity="0..1" />
+          <End Role="Requirement_data" Type="Self.Requirement_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_tbl">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Requirement_data">
+              <PropertyRef Name="req_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="Fran_Data" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="FranCount_Data" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="RequestHit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="API" Type="nvarchar" Mode="In" />
+          <Parameter Name="Hit" Type="int" Mode="In" />
+        </Function>
+        <Function Name="User_Data" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="FFGSPL_dbModelStoreContainer">
+          <EntitySet Name="API_Hit" EntityType="Self.API_Hit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Brand_tbl" EntityType="Self.Brand_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Franchise_tbl" EntityType="Self.Franchise_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product_tbl" EntityType="Self.Product_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Requirement_data" EntityType="Self.Requirement_data" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_tbl" EntityType="Self.User_tbl" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Franchise_tbl_Brand_tbl" Association="Self.FK_Franchise_tbl_Brand_tbl">
+            <End Role="Brand_tbl" EntitySet="Brand_tbl" />
+            <End Role="Franchise_tbl" EntitySet="Franchise_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Franchise_tbl_Product_tbl1" Association="Self.FK_Franchise_tbl_Product_tbl1">
+            <End Role="Product_tbl" EntitySet="Product_tbl" />
+            <End Role="Franchise_tbl" EntitySet="Franchise_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Franchise_tbl_User_tbl" Association="Self.FK_Franchise_tbl_User_tbl">
+            <End Role="User_tbl" EntitySet="User_tbl" />
+            <End Role="Franchise_tbl" EntitySet="Franchise_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Requirement_data_Franchise_tbl" Association="Self.FK_Requirement_data_Franchise_tbl">
+            <End Role="Franchise_tbl" EntitySet="Franchise_tbl" />
+            <End Role="Requirement_data" EntitySet="Requirement_data" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Requirement_data_User_tbl" Association="Self.FK_Requirement_data_User_tbl">
+            <End Role="User_tbl" EntitySet="User_tbl" />
+            <End Role="Requirement_data" EntitySet="Requirement_data" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FFGSPL_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="API_Hit">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="API" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Hit" Type="Int32" />
+          <Property Name="Datetime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Brand_tbl">
+          <Key>
+            <PropertyRef Name="br_id" />
+          </Key>
+          <Property Name="br_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="br_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="br_creaetedby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="br_createdat" Type="DateTime" Precision="3" />
+          <Property Name="br_updatedby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="br_updatedat" Type="DateTime" Precision="3" />
+          <Property Name="br_isdeleted" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Franchise_tbl" Relationship="Self.FK_Franchise_tbl_Brand_tbl" FromRole="Brand_tbl" ToRole="Franchise_tbl" />
+        </EntityType>
+        <EntityType Name="Franchise_tbl">
+          <Key>
+            <PropertyRef Name="fr_id" />
+          </Key>
+          <Property Name="fr_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fr_Placement_Officer_id" Type="Int32" />
+          <Property Name="fr_visit_date" Type="DateTime" Precision="0" />
+          <Property Name="fr_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fr_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="fr_br_id" Type="Int32" />
+          <Property Name="fr_pr_id" Type="Int32" Nullable="false" />
+          <Property Name="fr_owner_mgr" Type="String" MaxLength="520" FixedLength="false" Unicode="true" />
+          <Property Name="fr_mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fr_landline" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fr_emial" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="fr_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fr_pincode" Type="Int32" />
+          <Property Name="fr_area" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="fr_city" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="fr_district" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fr_state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fr_location_lat" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="fr_Location_lng" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="fr_req_jan" Type="Int32" />
+          <Property Name="fr_req_feb" Type="Int32" />
+          <Property Name="fr_req_mar" Type="Int32" />
+          <Property Name="fr_req_apr" Type="Int32" />
+          <Property Name="fr_req_may" Type="Int32" />
+          <Property Name="fr_req_jun" Type="Int32" />
+          <Property Name="fr_req_jul" Type="Int32" />
+          <Property Name="fr_req_aug" Type="Int32" />
+          <Property Name="fr_req_sept" Type="Int32" />
+          <Property Name="fr_req_oct" Type="Int32" />
+          <Property Name="fr_req_nov" Type="Int32" />
+          <Property Name="fr_req_dec" Type="Int32" />
+          <Property Name="fr_sal_range_fresher" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="fr_contact_person" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="fr_contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fr_ceatedby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fr_createdat" Type="DateTime" Precision="3" />
+          <Property Name="fr_updateby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fr_updatedat" Type="DateTime" Precision="3" />
+          <Property Name="fr_isdeleted" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fr_Officer_email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="fr_no_tech_work" Type="Int32" />
+          <NavigationProperty Name="Brand_tbl" Relationship="Self.FK_Franchise_tbl_Brand_tbl" FromRole="Franchise_tbl" ToRole="Brand_tbl" />
+          <NavigationProperty Name="Product_tbl" Relationship="Self.FK_Franchise_tbl_Product_tbl1" FromRole="Franchise_tbl" ToRole="Product_tbl" />
+          <NavigationProperty Name="User_tbl" Relationship="Self.FK_Franchise_tbl_User_tbl" FromRole="Franchise_tbl" ToRole="User_tbl" />
+          <NavigationProperty Name="Requirement_data" Relationship="Self.FK_Requirement_data_Franchise_tbl" FromRole="Franchise_tbl" ToRole="Requirement_data" />
+        </EntityType>
+        <EntityType Name="Product_tbl">
+          <Key>
+            <PropertyRef Name="pr_id" />
+          </Key>
+          <Property Name="pr_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pr_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="pr_createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pr_createdat" Type="DateTime" Precision="3" />
+          <Property Name="pr_updatedby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pr_updatedat" Type="DateTime" Precision="3" />
+          <Property Name="pr_isdeleted" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Franchise_tbl" Relationship="Self.FK_Franchise_tbl_Product_tbl1" FromRole="Product_tbl" ToRole="Franchise_tbl" />
+        </EntityType>
+        <EntityType Name="Requirement_data">
+          <Key>
+            <PropertyRef Name="req_id" />
+          </Key>
+          <Property Name="req_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="req_datetime" Type="DateTime" Precision="3" />
+          <Property Name="req_jan" Type="Int32" />
+          <Property Name="req_feb" Type="Int32" />
+          <Property Name="req_mar" Type="Int32" />
+          <Property Name="req_apr" Type="Int32" />
+          <Property Name="req_may" Type="Int32" />
+          <Property Name="req_jun" Type="Int32" />
+          <Property Name="req_jul" Type="Int32" />
+          <Property Name="req_aug" Type="Int32" />
+          <Property Name="req_sep" Type="Int32" />
+          <Property Name="req_oct" Type="Int32" />
+          <Property Name="req_nov" Type="Int32" />
+          <Property Name="req_dec" Type="Int32" />
+          <Property Name="req_user" Type="Int32" />
+          <Property Name="req_franchise" Type="Int32" />
+          <NavigationProperty Name="Franchise_tbl" Relationship="Self.FK_Requirement_data_Franchise_tbl" FromRole="Requirement_data" ToRole="Franchise_tbl" />
+          <NavigationProperty Name="User_tbl" Relationship="Self.FK_Requirement_data_User_tbl" FromRole="Requirement_data" ToRole="User_tbl" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User_tbl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ur_firstname" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ur_lastname" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ur_email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ur_mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ur_entity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ur_password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ur_createdby" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ur_createdat" Type="DateTime" Precision="3" />
+          <Property Name="ur_updateby" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ur_updatedat" Type="DateTime" Precision="3" />
+          <Property Name="ur_isdeleted" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ur_role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ur_desg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Franchise_tbl" Relationship="Self.FK_Franchise_tbl_User_tbl" FromRole="User_tbl" ToRole="Franchise_tbl" />
+          <NavigationProperty Name="Requirement_data" Relationship="Self.FK_Requirement_data_User_tbl" FromRole="User_tbl" ToRole="Requirement_data" />
+        </EntityType>
+        <Association Name="FK_Franchise_tbl_Brand_tbl">
+          <End Role="Brand_tbl" Type="Self.Brand_tbl" Multiplicity="0..1" />
+          <End Role="Franchise_tbl" Type="Self.Franchise_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand_tbl">
+              <PropertyRef Name="br_id" />
+            </Principal>
+            <Dependent Role="Franchise_tbl">
+              <PropertyRef Name="fr_br_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Franchise_tbl_Product_tbl1">
+          <End Role="Product_tbl" Type="Self.Product_tbl" Multiplicity="1" />
+          <End Role="Franchise_tbl" Type="Self.Franchise_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product_tbl">
+              <PropertyRef Name="pr_id" />
+            </Principal>
+            <Dependent Role="Franchise_tbl">
+              <PropertyRef Name="fr_pr_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Franchise_tbl_User_tbl">
+          <End Role="User_tbl" Type="Self.User_tbl" Multiplicity="0..1" />
+          <End Role="Franchise_tbl" Type="Self.Franchise_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_tbl">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Franchise_tbl">
+              <PropertyRef Name="fr_Placement_Officer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Requirement_data_Franchise_tbl">
+          <End Role="Franchise_tbl" Type="Self.Franchise_tbl" Multiplicity="0..1" />
+          <End Role="Requirement_data" Type="Self.Requirement_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Franchise_tbl">
+              <PropertyRef Name="fr_id" />
+            </Principal>
+            <Dependent Role="Requirement_data">
+              <PropertyRef Name="req_franchise" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Requirement_data_User_tbl">
+          <End Role="User_tbl" Type="Self.User_tbl" Multiplicity="0..1" />
+          <End Role="Requirement_data" Type="Self.Requirement_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_tbl">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Requirement_data">
+              <PropertyRef Name="req_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FFGSPL_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="API_Hit" EntityType="Self.API_Hit" />
+          <EntitySet Name="Brand_tbl" EntityType="Self.Brand_tbl" />
+          <EntitySet Name="Franchise_tbl" EntityType="Self.Franchise_tbl" />
+          <EntitySet Name="Product_tbl" EntityType="Self.Product_tbl" />
+          <EntitySet Name="Requirement_data" EntityType="Self.Requirement_data" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="User_tbl" EntityType="Self.User_tbl" />
+          <AssociationSet Name="FK_Franchise_tbl_Brand_tbl" Association="Self.FK_Franchise_tbl_Brand_tbl">
+            <End Role="Brand_tbl" EntitySet="Brand_tbl" />
+            <End Role="Franchise_tbl" EntitySet="Franchise_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Franchise_tbl_Product_tbl1" Association="Self.FK_Franchise_tbl_Product_tbl1">
+            <End Role="Product_tbl" EntitySet="Product_tbl" />
+            <End Role="Franchise_tbl" EntitySet="Franchise_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Franchise_tbl_User_tbl" Association="Self.FK_Franchise_tbl_User_tbl">
+            <End Role="User_tbl" EntitySet="User_tbl" />
+            <End Role="Franchise_tbl" EntitySet="Franchise_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Requirement_data_Franchise_tbl" Association="Self.FK_Requirement_data_Franchise_tbl">
+            <End Role="Franchise_tbl" EntitySet="Franchise_tbl" />
+            <End Role="Requirement_data" EntitySet="Requirement_data" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Requirement_data_User_tbl" Association="Self.FK_Requirement_data_User_tbl">
+            <End Role="User_tbl" EntitySet="User_tbl" />
+            <End Role="Requirement_data" EntitySet="Requirement_data" />
+          </AssociationSet>
+          <FunctionImport Name="Fran_Data" ReturnType="Collection(FFGSPL_dbModel.Fran_Data_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Franchise_Data" ReturnType="Collection(FFGSPL_dbModel.Franchise_Data_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="RequestHit">
+            <Parameter Name="API" Mode="In" Type="String" />
+            <Parameter Name="Hit" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="User_Data" ReturnType="Collection(FFGSPL_dbModel.User_Data_Result)">
+          <Parameter Name="Email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="FranCount_Data" ReturnType="Collection(FFGSPL_dbModel.FranCount_Data_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="Fran_Data_Result">
+          <Property Type="Int32" Name="Franchise_Id" Nullable="false" />
+          <Property Type="String" Name="Franchise_Name" Nullable="true" MaxLength="200" />
+          <Property Type="DateTime" Name="Visited_Date" Nullable="true" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Brand" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Product" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Owner___Manager" Nullable="true" MaxLength="520" />
+          <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email_ID" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Address" Nullable="true" />
+          <Property Type="Int32" Name="Pincode" Nullable="true" />
+          <Property Type="String" Name="Area" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="District" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Longtuide" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Lattitude" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="Number_of_Techinican_Working" Nullable="true" />
+          <Property Type="Int32" Name="Januery" Nullable="true" />
+          <Property Type="Int32" Name="Frbruary" Nullable="true" />
+          <Property Type="Int32" Name="March" Nullable="true" />
+          <Property Type="Int32" Name="April" Nullable="true" />
+          <Property Type="Int32" Name="May" Nullable="true" />
+          <Property Type="Int32" Name="June" Nullable="true" />
+          <Property Type="Int32" Name="July" Nullable="true" />
+          <Property Type="Int32" Name="August" Nullable="true" />
+          <Property Type="Int32" Name="September" Nullable="true" />
+          <Property Type="Int32" Name="October" Nullable="true" />
+          <Property Type="Int32" Name="November" Nullable="true" />
+          <Property Type="Int32" Name="December" Nullable="true" />
+          <Property Type="Decimal" Name="Salary_Range_for_Freshers" Nullable="true" Precision="19" />
+          <Property Type="String" Name="Contact_Person_Name" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Contact_Number" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Franchise_Data_Result">
+          <Property Type="Int32" Name="Franchise_ID" Nullable="false" />
+          <Property Type="String" Name="Franchise_Name" Nullable="true" MaxLength="200" />
+          <Property Type="DateTime" Name="Visited_Date" Nullable="true" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Brand" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Product" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Owner_Manager" Nullable="true" MaxLength="520" />
+          <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Landline" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EmailID" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Address" Nullable="true" />
+          <Property Type="Int32" Name="Pincode" Nullable="true" />
+          <Property Type="String" Name="Area" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="District" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Lattitute" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Longitude" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="Number_of_Techinican_Working" Nullable="true" />
+          <Property Type="Int32" Name="Januery" Nullable="true" />
+          <Property Type="Int32" Name="Frbruary" Nullable="true" />
+          <Property Type="Int32" Name="March" Nullable="true" />
+          <Property Type="Int32" Name="April" Nullable="true" />
+          <Property Type="Int32" Name="May" Nullable="true" />
+          <Property Type="Int32" Name="June" Nullable="true" />
+          <Property Type="Int32" Name="July" Nullable="true" />
+          <Property Type="Int32" Name="August" Nullable="true" />
+          <Property Type="Int32" Name="September" Nullable="true" />
+          <Property Type="Int32" Name="October" Nullable="true" />
+          <Property Type="Int32" Name="November" Nullable="true" />
+          <Property Type="Int32" Name="December" Nullable="true" />
+          <Property Type="Decimal" Name="Salary_Range_for_Freshers" Nullable="true" Precision="19" />
+          <Property Type="String" Name="Contact_PersonName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Contact_Number" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="User_Data_Result">
+          <Property Type="Int32" Name="User_id" Nullable="false" />
+          <Property Type="String" Name="User_Firstname" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="User_Lastname" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="User_Email" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="User_Mobile" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="User_Designation" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Entity" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="FranCount_Data_Result">
+          <Property Type="Int32" Name="Franchise_ID" Nullable="false" />
+          <Property Type="String" Name="Franchise_Name" Nullable="true" MaxLength="200" />
+          <Property Type="DateTime" Name="Visited_Date" Nullable="true" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Brand" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Product" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Owner_Manager" Nullable="true" MaxLength="520" />
+          <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Landline" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EmailID" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Address" Nullable="true" />
+          <Property Type="Int32" Name="Pincode" Nullable="true" />
+          <Property Type="String" Name="Area" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="District" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Lattitute" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Longitude" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="Number_of_Techinican_Working" Nullable="true" />
+          <Property Type="Int32" Name="CurrentMonthCount" Nullable="true" />
+          <Property Type="Decimal" Name="Salary_Range_for_Freshers" Nullable="true" Precision="19" />
+          <Property Type="String" Name="Contact_PersonName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Contact_Number" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FFGSPL_dbModelStoreContainer" CdmEntityContainer="FFGSPL_dbEntities">
+          <EntitySetMapping Name="API_Hit">
+            <EntityTypeMapping TypeName="FFGSPL_dbModel.API_Hit">
+              <MappingFragment StoreEntitySet="API_Hit">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="API" ColumnName="API" />
+                <ScalarProperty Name="Hit" ColumnName="Hit" />
+                <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Brand_tbl">
+            <EntityTypeMapping TypeName="FFGSPL_dbModel.Brand_tbl">
+              <MappingFragment StoreEntitySet="Brand_tbl">
+                <ScalarProperty Name="br_id" ColumnName="br_id" />
+                <ScalarProperty Name="br_name" ColumnName="br_name" />
+                <ScalarProperty Name="br_creaetedby" ColumnName="br_creaetedby" />
+                <ScalarProperty Name="br_createdat" ColumnName="br_createdat" />
+                <ScalarProperty Name="br_updatedby" ColumnName="br_updatedby" />
+                <ScalarProperty Name="br_updatedat" ColumnName="br_updatedat" />
+                <ScalarProperty Name="br_isdeleted" ColumnName="br_isdeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Franchise_tbl">
+            <EntityTypeMapping TypeName="FFGSPL_dbModel.Franchise_tbl">
+              <MappingFragment StoreEntitySet="Franchise_tbl">
+                <ScalarProperty Name="fr_id" ColumnName="fr_id" />
+                <ScalarProperty Name="fr_Placement_Officer_id" ColumnName="fr_Placement_Officer_id" />
+                <ScalarProperty Name="fr_visit_date" ColumnName="fr_visit_date" />
+                <ScalarProperty Name="fr_type" ColumnName="fr_type" />
+                <ScalarProperty Name="fr_name" ColumnName="fr_name" />
+                <ScalarProperty Name="fr_br_id" ColumnName="fr_br_id" />
+                <ScalarProperty Name="fr_pr_id" ColumnName="fr_pr_id" />
+                <ScalarProperty Name="fr_owner_mgr" ColumnName="fr_owner_mgr" />
+                <ScalarProperty Name="fr_mobile" ColumnName="fr_mobile" />
+                <ScalarProperty Name="fr_landline" ColumnName="fr_landline" />
+                <ScalarProperty Name="fr_emial" ColumnName="fr_emial" />
+                <ScalarProperty Name="fr_address" ColumnName="fr_address" />
+                <ScalarProperty Name="fr_pincode" ColumnName="fr_pincode" />
+                <ScalarProperty Name="fr_area" ColumnName="fr_area" />
+                <ScalarProperty Name="fr_city" ColumnName="fr_city" />
+                <ScalarProperty Name="fr_district" ColumnName="fr_district" />
+                <ScalarProperty Name="fr_state" ColumnName="fr_state" />
+                <ScalarProperty Name="fr_location_lat" ColumnName="fr_location_lat" />
+                <ScalarProperty Name="fr_Location_lng" ColumnName="fr_Location_lng" />
+                <ScalarProperty Name="fr_req_jan" ColumnName="fr_req_jan" />
+                <ScalarProperty Name="fr_req_feb" ColumnName="fr_req_feb" />
+                <ScalarProperty Name="fr_req_mar" ColumnName="fr_req_mar" />
+                <ScalarProperty Name="fr_req_apr" ColumnName="fr_req_apr" />
+                <ScalarProperty Name="fr_req_may" ColumnName="fr_req_may" />
+                <ScalarProperty Name="fr_req_jun" ColumnName="fr_req_jun" />
+                <ScalarProperty Name="fr_req_jul" ColumnName="fr_req_jul" />
+                <ScalarProperty Name="fr_req_aug" ColumnName="fr_req_aug" />
+                <ScalarProperty Name="fr_req_sept" ColumnName="fr_req_sept" />
+                <ScalarProperty Name="fr_req_oct" ColumnName="fr_req_oct" />
+                <ScalarProperty Name="fr_req_nov" ColumnName="fr_req_nov" />
+                <ScalarProperty Name="fr_req_dec" ColumnName="fr_req_dec" />
+                <ScalarProperty Name="fr_sal_range_fresher" ColumnName="fr_sal_range_fresher" />
+                <ScalarProperty Name="fr_contact_person" ColumnName="fr_contact_person" />
+                <ScalarProperty Name="fr_contact" ColumnName="fr_contact" />
+                <ScalarProperty Name="fr_ceatedby" ColumnName="fr_ceatedby" />
+                <ScalarProperty Name="fr_createdat" ColumnName="fr_createdat" />
+                <ScalarProperty Name="fr_updateby" ColumnName="fr_updateby" />
+                <ScalarProperty Name="fr_updatedat" ColumnName="fr_updatedat" />
+                <ScalarProperty Name="fr_isdeleted" ColumnName="fr_isdeleted" />
+                <ScalarProperty Name="fr_Officer_email" ColumnName="fr_Officer_email" />
+                <ScalarProperty Name="fr_no_tech_work" ColumnName="fr_no_tech_work" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product_tbl">
+            <EntityTypeMapping TypeName="FFGSPL_dbModel.Product_tbl">
+              <MappingFragment StoreEntitySet="Product_tbl">
+                <ScalarProperty Name="pr_id" ColumnName="pr_id" />
+                <ScalarProperty Name="pr_name" ColumnName="pr_name" />
+                <ScalarProperty Name="pr_createdby" ColumnName="pr_createdby" />
+                <ScalarProperty Name="pr_createdat" ColumnName="pr_createdat" />
+                <ScalarProperty Name="pr_updatedby" ColumnName="pr_updatedby" />
+                <ScalarProperty Name="pr_updatedat" ColumnName="pr_updatedat" />
+                <ScalarProperty Name="pr_isdeleted" ColumnName="pr_isdeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Requirement_data">
+            <EntityTypeMapping TypeName="FFGSPL_dbModel.Requirement_data">
+              <MappingFragment StoreEntitySet="Requirement_data">
+                <ScalarProperty Name="req_id" ColumnName="req_id" />
+                <ScalarProperty Name="req_datetime" ColumnName="req_datetime" />
+                <ScalarProperty Name="req_jan" ColumnName="req_jan" />
+                <ScalarProperty Name="req_feb" ColumnName="req_feb" />
+                <ScalarProperty Name="req_mar" ColumnName="req_mar" />
+                <ScalarProperty Name="req_apr" ColumnName="req_apr" />
+                <ScalarProperty Name="req_may" ColumnName="req_may" />
+                <ScalarProperty Name="req_jun" ColumnName="req_jun" />
+                <ScalarProperty Name="req_jul" ColumnName="req_jul" />
+                <ScalarProperty Name="req_aug" ColumnName="req_aug" />
+                <ScalarProperty Name="req_sep" ColumnName="req_sep" />
+                <ScalarProperty Name="req_oct" ColumnName="req_oct" />
+                <ScalarProperty Name="req_nov" ColumnName="req_nov" />
+                <ScalarProperty Name="req_dec" ColumnName="req_dec" />
+                <ScalarProperty Name="req_user" ColumnName="req_user" />
+                <ScalarProperty Name="req_franchise" ColumnName="req_franchise" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="FFGSPL_dbModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_tbl">
+            <EntityTypeMapping TypeName="FFGSPL_dbModel.User_tbl">
+              <MappingFragment StoreEntitySet="User_tbl">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ur_firstname" ColumnName="ur_firstname" />
+                <ScalarProperty Name="ur_lastname" ColumnName="ur_lastname" />
+                <ScalarProperty Name="ur_email" ColumnName="ur_email" />
+                <ScalarProperty Name="ur_mobile" ColumnName="ur_mobile" />
+                <ScalarProperty Name="ur_entity" ColumnName="ur_entity" />
+                <ScalarProperty Name="ur_password" ColumnName="ur_password" />
+                <ScalarProperty Name="ur_createdby" ColumnName="ur_createdby" />
+                <ScalarProperty Name="ur_createdat" ColumnName="ur_createdat" />
+                <ScalarProperty Name="ur_updateby" ColumnName="ur_updateby" />
+                <ScalarProperty Name="ur_updatedat" ColumnName="ur_updatedat" />
+                <ScalarProperty Name="ur_isdeleted" ColumnName="ur_isdeleted" />
+                <ScalarProperty Name="ur_role" ColumnName="ur_role" />
+                <ScalarProperty Name="ur_desg" ColumnName="ur_desg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Fran_Data" FunctionName="FFGSPL_dbModel.Store.Fran_Data">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FFGSPL_dbModel.Fran_Data_Result">
+                <ScalarProperty Name="Franchise_Id" ColumnName="Franchise Id" />
+                <ScalarProperty Name="Franchise_Name" ColumnName="Franchise Name" />
+                <ScalarProperty Name="Visited_Date" ColumnName="Visited Date" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Owner___Manager" ColumnName="Owner / Manager" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile Number" />
+                <ScalarProperty Name="Email_ID" ColumnName="Email ID" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Longtuide" ColumnName="Longtuide" />
+                <ScalarProperty Name="Lattitude" ColumnName="Lattitude" />
+                <ScalarProperty Name="Number_of_Techinican_Working" ColumnName="Number of Techinican Working" />
+                <ScalarProperty Name="Januery" ColumnName="Januery" />
+                <ScalarProperty Name="Frbruary" ColumnName="Frbruary" />
+                <ScalarProperty Name="March" ColumnName="March" />
+                <ScalarProperty Name="April" ColumnName="April" />
+                <ScalarProperty Name="May" ColumnName="May" />
+                <ScalarProperty Name="June" ColumnName="June" />
+                <ScalarProperty Name="July" ColumnName="July" />
+                <ScalarProperty Name="August" ColumnName="August" />
+                <ScalarProperty Name="September" ColumnName="September" />
+                <ScalarProperty Name="October" ColumnName="October" />
+                <ScalarProperty Name="November" ColumnName="November" />
+                <ScalarProperty Name="December" ColumnName="December" />
+                <ScalarProperty Name="Salary_Range_for_Freshers" ColumnName="Salary Range for Freshers" />
+                <ScalarProperty Name="Contact_Person_Name" ColumnName="Contact Person Name" />
+                <ScalarProperty Name="Contact_Number" ColumnName="Contact Number" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RequestHit" FunctionName="FFGSPL_dbModel.Store.RequestHit" />
+          <FunctionImportMapping FunctionImportName="User_Data" FunctionName="FFGSPL_dbModel.Store.User_Data">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FFGSPL_dbModel.User_Data_Result">
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="User_Firstname" ColumnName="User_Firstname" />
+                <ScalarProperty Name="User_Lastname" ColumnName="User_Lastname" />
+                <ScalarProperty Name="User_Email" ColumnName="User_Email" />
+                <ScalarProperty Name="User_Mobile" ColumnName="User_Mobile" />
+                <ScalarProperty Name="User_Designation" ColumnName="User_Designation" />
+                <ScalarProperty Name="Entity" ColumnName="Entity" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="FranCount_Data" FunctionName="FFGSPL_dbModel.Store.FranCount_Data">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FFGSPL_dbModel.FranCount_Data_Result">
+                <ScalarProperty Name="Franchise_ID" ColumnName="Franchise ID" />
+                <ScalarProperty Name="Franchise_Name" ColumnName="Franchise_Name" />
+                <ScalarProperty Name="Visited_Date" ColumnName="Visited_Date" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Owner_Manager" ColumnName="Owner_Manager" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="Landline" ColumnName="Landline" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Lattitute" ColumnName="Lattitute" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Number_of_Techinican_Working" ColumnName="Number_of_Techinican_Working" />
+                <ScalarProperty Name="CurrentMonthCount" ColumnName="CurrentMonthCount" />
+                <ScalarProperty Name="Salary_Range_for_Freshers" ColumnName="Salary_Range_for_Freshers" />
+                <ScalarProperty Name="Contact_PersonName" ColumnName="Contact_PersonName" />
+                <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

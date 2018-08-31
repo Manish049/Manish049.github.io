@@ -1,0 +1,64 @@
+﻿@model IEnumerable<FunFirstAPI_Pro.Models.Brand_tbl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.br_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.br_creaetedby)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.br_createdat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.br_updatedby)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.br_updatedat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.br_isdeleted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.br_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.br_creaetedby)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.br_createdat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.br_updatedby)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.br_updatedat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.br_isdeleted)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.br_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.br_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.br_id })
+        </td>
+    </tr>
+}
+
+</table>
