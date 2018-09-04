@@ -1,0 +1,57 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Oxygen:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700);
+
+
+
+
+#dropdown-menu-i .hide-buttons [data-button] {
+  display: none !important;
+}
+#dropdown-menu-i .navbar-brand a {
+  font-size: 36px;
+  font-family: 'Open Sans', sans-serif;
+}
+#dropdown-menu-i .nav .link,
+#dropdown-menu-i .dropdown-item {
+  font-size: 1em;
+  color: #000000;
+}
+#dropdown-menu-i .navbar,
+#dropdown-menu-i .dropdown-menu {
+  background: #ffffff;
+}
+#dropdown-menu-i .dropdown-menu .dropdown-toggle[aria-expanded="true"],
+#dropdown-menu-i .dropdown-menu a:hover,
+#dropdown-menu-i .dropdown-menu a:focus {
+  background: #f5f5f5;
+}
+#dropdown-menu-i .navbar-toggler {
+  color: #000000;
+}
+#header4-3 H1 {
+  font-family: 'Oxygen', sans-serif;
+  color: #353232;
+  font-size: 72px;
+}
+#testimonials1-5 .mbr-section-title {
+  font-family: 'Raleway', sans-serif;
+}
+#testimonials1-5 .card-block EM {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+#menu-e .navbar-toggler {
+  color: #353232;
+}
+#menu-e .navbar-brand {
+  font-size: 25px;
+  font-family: 'Lato', sans-serif;
+}
+#menu-e .nav-link SPAN {
+  font-family: 'Roboto', sans-serif;
+}
